@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* sometime we write long functions due to which javascricpt works asycncronusly so to  overcome this we use await aand async*/
+        /*by resolving promise  it takes a lot of time so to overcome this we use async and await*/
+    
+     async function getdata(){
+       let handlepromise= new Promise((resolve,reject)=>{
+             
+           setTimeout(() => {
+            resolve("all done")
+       }, 1000);
+       })
+       let x= await handlepromise;
+       console.warn("c");
+       console.warn(x);
+       console.warn("A");
+      
+
+     }
+     getdata();
+     
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

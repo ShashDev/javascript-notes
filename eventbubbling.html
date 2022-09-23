@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .topdiv {
+            background-color: brown;
+            padding: 20px;
+            
+        }
+
+        .middlediv {
+            background-color: aquamarine;
+            padding: 20px;
+        }
+
+        .innerdiv {
+            background-color: blue;
+            padding: 20px;
+        }
+    </style>
+    <script>
+         function topdiv(){
+            alert('top div');
+
+         }
+         function middlediv(){
+            alert('middle div')
+         }
+         function innerdiv(){
+
+            alert('inner div')
+            // event.stopPropagation()
+         }
+    </script>
+</head>
+
+<body>
+    <!-- 1.
+        for example we nested div and each div contains a event so if fire 
+    the most innerest event then it will fire all the outermost divs also this is know as event bubbling
+2.
+it ouccer with all the event listener but the event must be off same type
+
+3.
+to over come this we use event.stoppropagation() func
+-->
+
+    <div onclick="topdiv()" class="topdiv" > top div
+        <div onclick="middlediv()" class="middlediv"> middle div
+            <div onclick="innerdiv()" class="innerdiv"> inner div</div>
+        </div>
+    </div>
+</body>
+
+</html>
