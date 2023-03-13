@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Name</label>
+    <input type="text"  id="name"><br>
+    <label for="">Rollno</label>
+    <input type="text" name="rollno" id="rollno">
+    <input type="button" value="submit" onclick="add()">
+
+   <table id="tb1"> 
+    <thead>
+        <th>name</th>
+        <th>rollno</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+   </table>
+</body>
+<script>
+
+function add() {
+
+
+    var name=document.getElementById("name").value
+ var rollno=document.getElementById("rollno").value
+
+ var tr=document.createElement('tr');
+ var td1=tr.appendChild(document.createElement('td'))
+ var td2=tr.appendChild(document.createElement('td'))
+ td1.innerHTML=name;
+ td2.innerHTML=rollno;
+ document.getElementById("tb1").appendChild(tr);
+    
+}
+
+
+  
+</script>
+</html>
