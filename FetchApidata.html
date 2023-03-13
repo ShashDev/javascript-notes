@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="fetchData()">Fetch</button>
+    <table>
+        <thead>
+            <tr>
+
+                <th>Id </th>
+                <th>Name</th>
+                <th>Email </th>
+                <th>Gender </th>
+
+
+
+            </tr>
+
+        <tbody id="enter-data">
+
+        </tbody>
+        </thead>
+    </table>
+
+</body>
+<script>
+    function fetchData() {
+        var data = fetch('https://gorest.co.in/public/v2/users').then((response) => response.json()).then((products) => {
+
+
+
+            let placeholder = document.getElementById('enter-data');
+            let out = "";
+            for (let product of products) {
+
+                out += `
+    <tbody>
+        <tr>   
+            <td>${product.id}</td>
+        <td>${product.name}</td>
+        <td>${product.email}</td>
+
+        <td>${product.gender}</td>
+
+            
+            
+            </tr>
+      
+    </tbody>
+
+            
+            `
+
+            }
+            placeholder.innerHTML = out;
+
+
+        })
+
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>
