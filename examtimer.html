@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .center{
+    text-align: center;
+    margin-top: 10%;
+  }
+</style>
+<body>
+  <div class="center">
+    <h1>Exam</h1>
+    <span>
+      <span id="hours"></span>
+      <span id="minutes"></span>
+      <span id="seconds"></span>
+  
+    </span><br>
+  
+    <button type="button" onclick="myfun()">Start Exam</button>
+  </div>
+  
+  
+</body>
+<script>
+
+  function myfun() {
+    const start = new Date().getTime();
+    const examduration = 10800 * 1000;
+    setInterval(showtime, 1000);
+    function showtime() {
+      var time = new Date().getTime();
+      var remaining = time - start;
+      var read = examduration - remaining;
+      var hours = Math.floor(read / 3600000);
+      var minutes = Math.floor(read % 3600000 / 60000);
+      var seconds = Math.floor(read % 60000 / 1000)
+      document.getElementById("hours").innerHTML = hours + ':'
+      document.getElementById("minutes").innerHTML = minutes + ':'
+      document.getElementById("seconds").innerHTML = seconds
+           if(remaining>=examduration){
+            alert("Exam Over")
+           }
+    }
+  }
+
+</script>
+</html>
