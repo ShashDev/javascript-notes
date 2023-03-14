@@ -15,7 +15,8 @@
   <div class=" text-center mx-auto text-xl italic">
     <form name="myForm">
       <label for="fname">Name</label>
-      <input class="border-2 border-black mt-5 ml-5  " type="text" name="name" id="name" onchange="validateName()" required> <br>
+      <input class="border-2 border-black mt-5 ml-5  " type="text" name="name" id="name" onchange="validateName()"
+        required> <br>
       <label for="Employeeid">Employee Id</label>
       <input type="number" class="border-2 border-black mt-5  ml-5   " name="eid" onchange="validateId()" required><br>
       <label for="">Age</label>
@@ -35,7 +36,6 @@
 
       <label for="">Contact No</label>
       <input type="number" class="border-2 border-black mt-5  ml-5  " id="phone" onchange="phonenumber()" required> <br>
-
       <input class="border-2 border-black mt-5  ml-5 " type="submit" value="register">
     </form>
 
@@ -44,10 +44,8 @@
 <script>
   function validateId() {
     var x = document.forms["myForm"]["eid"].value;
-
     if (x.length < 5 || x.length > 5) {
       alert("Id must of 5 length");
-
     }
   }
 
@@ -58,7 +56,6 @@
     if (!regName.test(name)) {
       alert('Invalid name given.');
     }
-
   }
 
 
@@ -66,7 +63,6 @@
 
 
   function age1() {
-
     var x = document.forms["myForm"]["age"].value;
     if (!(x > 1 && x < 100)) {
       alert('Invalid Age.');
@@ -77,13 +73,11 @@
 
   function Salary1() {
     var z = document.getElementById("Salary").value;
-
     if ((z < 1)) {
       alert('Invalid Salary');
     }
     if (z > 1000000) {
       alert('Invalid Salary');
-
     }
   }
 
@@ -102,17 +96,14 @@
 
   function phonenumber() {
     var phoneno = /^\d{10}$/;
-    if (document.getElementById("phone").value.match(phoneno))
-        {
-          alert("Valid Contact");
-
-        }
-else{
-  alert("InValid Contact");
-
-}
+    if (document.getElementById("phone").value.match(phoneno)) {
+      alert("Valid Contact");
     }
-  
+    else {
+      alert("InValid Contact");
+    }
+  }
+
 </script>
 
 </html>

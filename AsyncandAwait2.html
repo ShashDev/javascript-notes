@@ -11,7 +11,7 @@ async function getdata(){
     /*asyn always return a promise
     await need a async*/
     
-    let data = await fetch ("https://api.github.com/users ")
+    let data = await fetch ("https://gorest.co.in/public/v2/users")
     data= await data.json(); 
     console.warn(data);
 }
