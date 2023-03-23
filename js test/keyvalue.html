@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script >
+let a={ a: 1, b: 2, c: 3 }
+    function fnc(a) {
+        var ans=[]
+        var out=[]
+        var answer=[]
+        for(let i in a){
+          ans.push(a[i])
+        }
+        for(let i in a){
+            out.push(i)
+        }
+        answer.push(ans)
+        answer.push(out)
+        console.log(answer);
+
+    }
+    fnc(a)
+</script>
+</html>

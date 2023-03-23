@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function add(id) {
+
+        const watch=   { "products" : [ 
+    { "id":"card1" ,"Name": "Firebolt1", "Price" : 4000 
+    },
+    { "id":"card2" ,"Name": "Firebolt2", "Price" : 3000
+    },
+    {"id":"card3" , "Name": "Firebolt3", "Price" : 6000
+    },
+    { "id":"card4" ,"Name": "Firebolt4", "Price" : 10000
+    }
+
+]}
+
+localStorage.setItem(id,(JSON.stringify(watch.products[id-1])))
+
+     for (let i = id; i<=id; i++) {
+const get=localStorage.getItem(i);
+console.log(JSON.parse(get))
+
+     }   
+    }
+
+
+</script>
+
+
+
+    <body>
+<button onclick="add(1)">add1</button>
+<button onclick="add(2)">add2</button>
+<button onclick="add(3)">add3</button>
+<button onclick="add(4)">add4</button>
+
+        
+    </body>
+    <!-- <label for="">Enter Fname</label>
+    <input type="text" id="fname"><br>
+    <label for="">Enter Surname</label>
+
+    <input type="text" id="Surname"><br>
+    <label for="">Output</label>
+
+    <input type="text" id="output"><br>
+
+    <button onclick="sort()">sort</button>
+    <button onclick="count()">count</button>
+    <button onclick="append()">append</button>
+    <button onclick="uppercase1()">uppercase1</button>
+
+
+</body>
+<script>
+    var a=document.getElementById("fname").value;
+    var b=document.getElementById("Surname").value;
+var out=document.getElementById("output").value;
+
+function sort() {
+    var a=document.getElementById("fname").value;
+    var sort1=[...a].sort();
+    console.log(sort1)
+document.getElementById("output").value=sort1;
+
+    
+
+}
+
+function count() {
+    var a=document.getElementById("fname").value;
+    var sort1=a.length;
+    console.log(sort1)
+document.getElementById("output").value=sort1;
+
+    
+
+}
+
+function append
+() {
+    var a=document.getElementById("fname").value;
+    var b=document.getElementById("Surname").value;
+var c= a+" "+b;
+document.getElementById("output").value=c;
+
+    
+
+}
+
+function uppercase1
+() {
+    var a=document.getElementById("fname").value.toUpperCase();
+    var b=document.getElementById("Surname").value.toUpperCase();
+var c= a+" "+b;
+document.getElementById("output").value=c;
+
+    
+
+} -->
+
+
+<!-- </script> -->
+</html>

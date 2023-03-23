@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name <input type="text " id="name">
+    Surname <input type="text" id="surname">
+<h3 id="ans"></h3>
+    <button onclick="store()">store</button>
+    <button onclick="sort()">sort</button>
+    <button onclick="surname()">surname</button>
+    <button onclick="caseU()">caseU</button>
+</body>
+<script>
+    function store() {
+        let a=document.getElementById("name").value;
+document.getElementById("ans").innerHTML=a;
+        
+    }
+    function sort() {
+        let a=document.getElementById("name").value;
+        let c=a.split("").sort()
+        document.getElementById("ans").innerHTML=c;
+        
+    }
+    function surname() {
+        let a=document.getElementById("name").value;
+        let b=document.getElementById("surname").value;
+        document.getElementById("ans").innerHTML=a+"  "+b;
+ 
+
+    }
+    function caseU() {
+        let a=document.getElementById("name").value;
+        let b=document.getElementById("surname").value;
+        let d=a+"  "+b;
+        document.getElementById("ans").innerHTML=d.toUpperCase()
+
+    }
+</script>
+</html>

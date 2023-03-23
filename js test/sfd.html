@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<body>
+    <div>
+        <label for="">First Name</label>
+        <input type="text" id="fname"> <br>
+        <label for="">Last Name</label>
+        <input type="text" id="lname"><br>
+        <label for="">DoB</label>
+        <input type="date" id="dob">
+       <select name="ss" id="State" value="State">
+        <option value="">State</option>
+
+        <option value="Gujarat">Gujarat</option>
+        <option value="Maharashtra">Maharashtra</option>
+
+       </select>
+       <select name="ss" id="city" value="City">
+
+
+
+       </select>
+
+    </div>
+
+</body>
+<script>
+
+$(document).ready(function(){
+$("#State").change(function(){
+
+    var d= { 
+
+"Gujarat":["Surat","Ahmedabad","Baroda"],
+
+ "Maharashtra":["Mumbai","Thane"]
+
+}
+if($('#State').val()==="Gujarat"){
+
+// $("#app").append(`<option>${d.Gujarat[0]}</option>`)
+
+// $("#app").append(`<option>${d.Gujarat[1]}</option><br>`)
+// $("#app").append(`<option>${d.Gujarat[2]}</option>`)
+$("<option></option>").html("Select State").appendTo($("#city"))
+
+
+$("<option></option>").html(`${d.Gujarat[0]}`).appendTo($("#city"))
+$("<option></option>").html(`${d.Gujarat[1]}`).appendTo($("#city"))
+$("<option></option>").html(`${d.Gujarat[2]}`).appendTo($("#city"))
+
+
+
+}
+
+else {
+    $("<option></option>").html(`${d.Maharashtra[0]}`).appendTo($("#city"))
+$("<option></option>").html(`${d.Maharashtra[1]}`).appendTo($("#city"))
+
+
+$("#app").hide()
+
+}
+
+})
+
+
+
+})
+</script>
+</html>

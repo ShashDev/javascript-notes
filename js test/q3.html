@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function rev() {
+        var f=prompt("enter the string");
+        var c=f.split("").reverse().join(" ");
+       let letter=c.split("");
+       var a=[]
+       for(let i of letter){
+        if(i===i.toUpperCase()){
+a.push(i.toLowerCase())
+        }
+        else{
+            a.push(i.toUpperCase())
+        }
+       }
+       var v=a.join("")
+alert(v)
+    }
+    rev()
+</script>
+</html>

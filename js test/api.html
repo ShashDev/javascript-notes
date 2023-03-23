@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<style>
+    table tr td{
+        border-collapse: collapse;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <select name="" id="ss">
+        <option  id="opt"></option>
+    </select>
+
+    <button onclick="getdata()">Fetch</button>
+    <button onclick="postdata()">Post</button>
+Name <input type="text" name="" id="name">
+email <input type="text" name="" id="email">
+Gender 
+Male<input type="radio" name="gender" id="male" value="male">
+feMale<input type="radio" name="gender" id="female"  value="female">
+status 
+active<input type="radio" name="status" id="active"  value="active">
+inactive<input type="radio" name="status" id="inactive"  value="inactive">
+
+
+</body>
+<script>
+
+function getdata() {
+   var data=fetch("https://gorest.co.in/public/v2/users").then((res)=>
+    res.json()).then((data)=>{
+
+console.log(data)
+let place=document.getElementById("ss");
+let out=''
+for ( let datas of data){
+    out+=`
+    <option>${datas.name}</option>
+   `
+}
+
+place.innerHTML=out
+})
+
+}
+
+function postdata() {
+    var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer 0655682810fb5aa69f4b39f5fdcd3872460a939260d0c0ee0b3d7a41915562b9");
+myHeaders.append("Content-Type", "application/json");
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var gender=$("input[name=gender]:checked").val()
+var status=$("input[name=status]:checked").val()
+
+var raw = JSON.stringify({
+  "name": name,
+  "email": email,
+  "gender":gender,
+  "status": status
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://gorest.co.in/public/v2/users",requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+
+}
+    
+
+</script>
+</html>
